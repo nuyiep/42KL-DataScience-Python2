@@ -45,6 +45,7 @@ def expand_numbers(new_pop):
 
 
 def display_info(df):
+    '''Display graph'''
     try:
         country_a = df[df["country"] == 'France']
         country_b = df[df["country"] == 'Belgium']
@@ -54,7 +55,7 @@ def display_info(df):
         b_stripped_pop = expand_numbers(b_new_pop)
         plt.plot(a_new_years, a_stripped_pop, label="France")
         plt.plot(b_new_years, b_stripped_pop, label="Belgium")
-        ax = plt.gca() # display
+        ax = plt.gca()  # display
         ax.yaxis.set_major_formatter(FuncFormatter(format_population))
         plt.xlabel("Year")
         plt.ylabel("Population")
